@@ -3,8 +3,7 @@ package metrics;
 public class PerformanceTracker {
     private long comparisons = 0;
     private long swaps = 0;
-    private long arrayAccesses = 0; // Read or Write operation
-
+    private long arrayAccesses = 0;
     public void incrementComparisons(int count) {
         this.comparisons += count;
     }
@@ -13,9 +12,7 @@ public class PerformanceTracker {
         this.swaps += count;
     }
 
-    // A typical array element read or write is an access.
-    // E.g., arr[j] < currentElement is 1 access (read) + 1 comparison (incrementComparisons).
-    // E.g., arr[j+1] = arr[j] is 2 accesses (read + write).
+
     public void incrementArrayAccesses(int count) {
         this.arrayAccesses += count;
     }
